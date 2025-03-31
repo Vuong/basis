@@ -47,8 +47,8 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
       return nothing;
     }
 
-    let vacuumEntities = this.getEntitiesByType('vacuum');
-    let cameraEntities = [
+    const vacuumEntities = this.getEntitiesByType('vacuum');
+    const cameraEntities = [
       ...this.getEntitiesByType('camera'),
       ...this.getEntitiesByType('image'),
     ];
@@ -173,7 +173,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
     if (!this.config || !this.hass || !event.target) {
       return;
     }
-    let target = event.target as ConfigElement;
+    const target = event.target as ConfigElement;
     if (
       !target.configValue ||
       this.config[target.configValue] === target?.value
